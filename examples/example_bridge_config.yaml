@@ -1,15 +1,14 @@
 # Name of the domain bridge, used for node naming and logging
 name: onboard_bridge
-# 地面站域ID
-from_domain: 0
 # 无人机域ID
-to_domain: 1
+from_domain: 1
+# 地面站域ID
+to_domain: 0
 topics:
-  # Bridge "/onboard/cmd" topic from 地面站 to 无人机
-  /onboard/cmd:
-    type: onboard_msgs/msg/OnboardCommand
-  # Bridge reversed "/onboard/state" topic
+  # 无人机到地面站
   /onboard/state:
     type: onboard_msgs/msg/OnboardState
-    # Reverse 'from' and 'to' domains (bridge from 无人机 to 地面站)
+  # 地面站到无人机
+  /onboard/cmd:
+    type: onboard_msgs/msg/OnboardCommand
     reversed: True
