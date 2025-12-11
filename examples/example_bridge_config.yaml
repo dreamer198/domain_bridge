@@ -12,3 +12,13 @@ topics:
   /onboard/cmd:
     type: onboard_msgs/msg/OnboardCommand
     reversed: True
+  # 靶标无人机GPS坐标到跟踪无人机
+  /uav6/global_position/global:
+    type: sensor_msgs/msg/NavSatFix
+    from_domain: 6
+    to_domain: 4
+  # 靶标无人机姿态到跟踪无人机
+  /uav6/local_position/pose:
+    type: geometry_msgs/msg/PoseStamped
+    from_domain: 6
+    to_domain: 4
